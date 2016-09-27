@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>jLightroom</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <link href="jquery.lightroom.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+      
+    <div class="container">
+        <h1>jLightroom</h1>
+        <sub>by <a href="https://www.falk-m.de" target="_blank">falk-m.de</a></sub><br/><br/>
+        <p>
+            jQuery plugin for photo gallery using a horizontal masonry layout.
+        </p>
+        
+        <h2>Example</h2>
+        <p>A other exapmle with random images and a jQuery lightbox rind in Git-Repository</p>
+        <div id="jLightroom" class="jlr">
+            <div><img src="https://dummyimage.com/500x500" /></div><div><img 
+                    src="https://dummyimage.com/1200x600" /></div><div><img 
+                            src="https://dummyimage.com/300x700" /></div><div><img 
+                                    src="https://dummyimage.com/1000x400" /></div><div><img 
+                                            src="https://dummyimage.com/1000x400" /></div>
+        </div>
+        
+        <h2>Usage</h2>
+        <h3>CSS</h3>
+        Define image height and margin in css:<br/>
+        <pre><code>
+.jlr {font-size: 0; /*remove epmty space between images*/}
+
+.jlr div {
+    font-size: 1rem;
+    display: inline-block;
+    box-sizing: border-box;     
+    padding: <strong>5px</strong>;
+}
+
+.jlr img {
+    height: <strong>200px</strong>;
+    opacity: 0;
+
+}</code></pre>
+        
+        <h3>html</h3>
+        insert html code. 
+        <pre><code>
+&lt;div id=&quot;jLightroom&quot; class=&quot;jlr&quot;&gt;
+    &lt;div&gt;&lt;img src=&quot;https://dummyimage.com/500x500&quot; /&gt;&lt;/div&gt; 
+    &lt;div&gt;&lt;img src=&quot;https://dummyimage.com/1000x1000&quot; /&gt;&lt;/div&gt; 
+&lt;/div&gt;            
+</code></pre>
+        
+        <h3>Javascript</h3>
+        Lightroom require jQuery and the imagesloaded-plugin
+        <pre><code>&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;jquery.lightroom.js&quot;&gt;&lt;/script&gt;
+        </code></pre>
+        
+        Init the lightroom. set same image-space linke the css-code
+        <pre><code> $("#jLightroom").lightroom({img_space: <strong>5</strong>}).init();</code></pre>
+        
+        <h2>Options</h2>
+        <table class="table">
+            <tr>
+                <th>
+                    name
+                </th>
+                <th>
+                    default
+                </th>
+                <th>
+                    description
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    img_space
+                </td>
+                <td>
+                    5
+                </td>
+                <td>
+                    the padding of the image-wrapped element
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    image_container_selector
+                </td>
+                <td>
+                    div
+                </td>
+                <td>
+                    the selector of the image-wrapped element.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    img_selector
+                </td>
+                <td>
+                    img
+                </td>
+                <td>
+                    the image selector.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    img_class_loaded
+                </td>
+                <td>
+                    jlr_loaded
+                </td>
+                <td>
+                    images how loaded get this css-class name.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    init_callback
+                </td>
+                <td>
+                    function(elem){}
+                </td>
+                <td>
+                    callback function after images are loaded. Can use for remove spinners e.g.
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+    <script src="jquery.lightroom.js"></script>
+    <script type="text/javascript">
+        $("#jLightroom").lightroom().init();
+    </script>
+  </body>
+</html>
