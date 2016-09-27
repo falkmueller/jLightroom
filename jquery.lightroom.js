@@ -82,13 +82,14 @@
         var _calculate_row = function(row_items, row_width){
             var px_width_image = container_width - (row_items.length * 2 * me.opts.img_space);
             
+            if(row_width < container_width * 0.75 && me.opts.img_mode == "max"){
+                row_width = container_width;
+            }
+            
              $(row_items).each(function(i, img){
                  var pc_image_width_org = $.data(img, "jlr").org_width / row_width * 100;
                  
                  var px_image_width_new = px_width_image / 100 * pc_image_width_org;
-                 if(px_image_width_new > px_width_image && me.opts.img_mode){
-                     px_image_width_new = px_width_image;
-                 }
                  px_image_width_new += 2 * me.opts.img_space;
                  var pc_image_width_new  = px_image_width_new / container_width * 100;
 

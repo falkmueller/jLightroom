@@ -54,6 +54,8 @@
         
         <h2>random example</h2>
         
+        <a href="index.html">back to ducumentation</a>
+        
         <div id="jLightroom" class="jlr gray_out">
             <?php for($i=0;$i<29;$i++){ 
                 $img = rand(500, 1000).'x'.rand(500, 1000);
@@ -76,6 +78,7 @@
             img_selector: "img.jlr_img",
             img_class_loaded: "jlr_loaded",
             img_space: 5,
+            img_mode: 'min',
             init_callback: function(elem){$(elem).removeClass("gray_out")}
         }).init();
     </script>
