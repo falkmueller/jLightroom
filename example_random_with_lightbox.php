@@ -35,6 +35,10 @@
     transition: opacity 1s ease-in;
     opacity: 1;
 }
+
+.gray_out {
+    background-color: #eee;
+}
         </style>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -72,7 +76,7 @@
             img_selector: "img.jlr_img",
             img_class_loaded: "jlr_loaded",
             img_space: 5,
-            init_callback: function(elem){}
+            init_callback: function(elem){$(elem).removeClass("gray_out")}
         }).init();
     </script>
   </body>
