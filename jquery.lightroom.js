@@ -59,7 +59,7 @@
                    row_items.push(img);
                    row_width += image_width;
                    return;
-               }else if (row_width > 0 && me.opts.img_mode == "max"){
+               }else if (row_width > 0 && me.opts.img_mode == "max" && row_width + (2 * me.opts.img_space) < container_width){
                    row_items.push(img);
                    row_width += image_width;
                    _calculate_row(row_items, row_width);
@@ -82,7 +82,7 @@
         var _calculate_row = function(row_items, row_width){
             var px_width_image = container_width - (row_items.length * 2 * me.opts.img_space);
             
-            if(row_width < container_width * 0.75 && me.opts.img_mode == "max"){
+            if(row_width < container_width * 0.80 && me.opts.img_mode == "max"){
                 row_width = container_width;
             }
             
