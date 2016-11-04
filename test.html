@@ -82,13 +82,13 @@
     </div>
       
 
-    <!-- jQuery -->
+    <!-- jQuery (required)-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- imageloaded plugin: detect if a image been loaded -->
+    <!-- imageloaded plugin (required): detect if a image been loaded -->
     <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
-    <!-- Lightbox -->
+    <!-- Lightbox (optional)-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
-    <!-- jLightroom Script -->
+    <!-- jLightroom Script (required)-->
     <script src="http://code.falk-m.de/jLightroom/jquery.lightroom.js"></script>
     <!--init and configuration of jLightroom-->
     <script type="text/javascript">
@@ -96,7 +96,7 @@
             image_container_selector: "a", /*Selector of the immage Wrapped element*/
             img_class_loaded: "jlr_loaded", /* this css-class will be added to image if it loaded */
             img_space: 5, /*padding between images, must be the same value defined in css*/
-            img_mode: 'max' /*mode min or max. Its define if the heigth (defined in css), a minamal og maximal value*/
+            img_mode: 'max' /*max mode say, that the heigth (defined in css), is a maximal value*/
         }).init();
         
         /* second example without Lightbox links*/
@@ -104,7 +104,7 @@
             image_container_selector: "div", 
             img_class_loaded: "jlr_loaded",
             img_space: 5,
-            img_mode: 'max'
+            img_mode: 'min' /*min mode say, that the heigth (defined in css), is a minimal value*/
         }).init();
     </script>
   </body>
