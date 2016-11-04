@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jLightroom</title>
+
+    <!-- Lightbox CSS (optinal) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+    
+    <!-- jLightbox Style definition -->
+    <style type="text/css">
+        .jlr {font-size: 0;} /*this reduce empty white-Space between images*/
+
+    .jlr a,  .jlr div {
+        font-size: 1rem;
+        display: inline-block;
+        box-sizing: border-box;     
+        padding: 5px; /*padding between images, must be the same value like the img_space property in the js-scipt on the buttom*/
+    }
+
+    .jlr img {
+        height: 200px; /*the average image height*/
+        opacity: 0; /* while jLightbox not finish, set images invisible */
+
+    }
+
+    /* this cass will be added after jLightroom has loaded the images */
+    .jlr img.jlr_loaded {
+         -webkit-transition: opacity 1s ease-in;
+        -moz-transition: opacity 1s ease-in;
+        -o-transition: opacity 1s ease-in;
+        -ms-transition: opacity 1s ease-in;
+        transition: opacity 1s ease-in;
+        opacity: 1;
+    }
+
+
+        </style>
+
+  </head>
+  <body>
+
+        <!--Define the images. in this example wrapped with a lightbox-->
+        <div id="jLightroom" class="jlr">
+            <a href="https://dummyimage.com/507x541" data-lightbox="lb1" class="jlr_item"><img src="https://dummyimage.com/507x541" class="jlr_img" /></a>
+            <a href="https://dummyimage.com/762x974" data-lightbox="lb1" class="jlr_item"><img src="https://dummyimage.com/762x974" class="jlr_img" /></a>
+            <a href="https://dummyimage.com/688x669" data-lightbox="lb1" class="jlr_item"><img src="https://dummyimage.com/688x669" class="jlr_img" /></a>
+            <a href="https://dummyimage.com/834x867" data-lightbox="lb1" class="jlr_item"><img src="https://dummyimage.com/834x867" class="jlr_img" /></a>
+            <a href="https://dummyimage.com/786x874" data-lightbox="lb1" class="jlr_item"><img src="https://dummyimage.com/786x874" class="jlr_img" /></a>
+            <a href="https://dummyimage.com/509x810" data-lightbox="lb1" class="jlr_item"><img src="https://dummyimage.com/509x810" class="jlr_img" /></a>
+            <a href="https://dummyimage.com/658x543" data-lightbox="lb1" class="jlr_item"><img src="https://dummyimage.com/658x543" class="jlr_img" /></a>
+            <a href="https://dummyimage.com/996x902" data-lightbox="lb1" class="jlr_item"><img src="https://dummyimage.com/996x902" class="jlr_img" /></a>
+            <a href="https://dummyimage.com/510x753" data-lightbox="lb1" class="jlr_item"><img src="https://dummyimage.com/510x753" class="jlr_img" /></a>
+            <a href="https://dummyimage.com/826x779" data-lightbox="lb1" class="jlr_item"><img src="https://dummyimage.com/826x779" class="jlr_img" /></a>
+            <a href="https://dummyimage.com/757x642" data-lightbox="lb1" class="jlr_item"><img src="https://dummyimage.com/757x642" class="jlr_img" /></a>
+            <a href="https://dummyimage.com/684x754" data-lightbox="lb1" class="jlr_item"><img src="https://dummyimage.com/684x754" class="jlr_img" /></a>
+            <a href="https://dummyimage.com/789x611" data-lightbox="lb1" class="jlr_item"><img src="https://dummyimage.com/789x611" class="jlr_img" /></a>
+            <a href="https://dummyimage.com/830x811" data-lightbox="lb1" class="jlr_item"><img src="https://dummyimage.com/830x811" class="jlr_img" /></a>
+            <a href="https://dummyimage.com/950x651" data-lightbox="lb1" class="jlr_item"><img src="https://dummyimage.com/950x651" class="jlr_img" /></a>
+            <a href="https://dummyimage.com/666x957" data-lightbox="lb1" class="jlr_item"><img src="https://dummyimage.com/666x957" class="jlr_img" /></a>
+            <a href="https://dummyimage.com/693x928" data-lightbox="lb1" class="jlr_item"><img src="https://dummyimage.com/693x928" class="jlr_img" /></a>
+            <a href="https://dummyimage.com/930x881" data-lightbox="lb1" class="jlr_item"><img src="https://dummyimage.com/930x881" class="jlr_img" /></a>
+            <a href="https://dummyimage.com/596x764" data-lightbox="lb1" class="jlr_item"><img src="https://dummyimage.com/596x764" class="jlr_img" /></a>
+            <a href="https://dummyimage.com/748x883" data-lightbox="lb1" class="jlr_item"><img src="https://dummyimage.com/748x883" class="jlr_img" /></a>
+            <a href="https://dummyimage.com/637x758" data-lightbox="lb1" class="jlr_item"><img src="https://dummyimage.com/637x758" class="jlr_img" /></a>
+            <a href="https://dummyimage.com/692x796" data-lightbox="lb1" class="jlr_item"><img src="https://dummyimage.com/692x796" class="jlr_img" /></a>
+            <a href="https://dummyimage.com/801x687" data-lightbox="lb1" class="jlr_item"><img src="https://dummyimage.com/801x687" class="jlr_img" /></a>
+        </div>
+      
+        <h2>without Lightroom-Link</h2>
+            
+    <div id="jLightroom2" class="jlr">
+            <div class="jlr_item"><img src="https://dummyimage.com/507x541" class="jlr_img" /></div>
+            <div class="jlr_item"><img src="https://dummyimage.com/762x974" class="jlr_img" /></div>
+            <div class="jlr_item"><img src="https://dummyimage.com/688x669" class="jlr_img" /></div>
+            <div class="jlr_item"><img src="https://dummyimage.com/834x867" class="jlr_img" /></div>
+            <div class="jlr_item"><img src="https://dummyimage.com/786x874" class="jlr_img" /></div>
+            <div class="jlr_item"><img src="https://dummyimage.com/509x810" class="jlr_img" /></div>
+            
+    </div>
+      
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- imageloaded plugin: detect if a image been loaded -->
+    <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+    <!-- Lightbox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+    <!-- jLightroom Script -->
+    <script src="http://code.falk-m.de/jLightroom/jquery.lightroom.js"></script>
+    <!--init and configuration of jLightroom-->
+    <script type="text/javascript">
+        $("#jLightroom").lightroom({
+            image_container_selector: "a", /*Selector of the immage Wrapped element*/
+            img_class_loaded: "jlr_loaded", /* this css-class will be added to image if it loaded */
+            img_space: 5, /*padding between images, must be the same value defined in css*/
+            img_mode: 'max' /*mode min or max. Its define if the heigth (defined in css), a minamal og maximal value*/
+        }).init();
+        
+        /* second example without Lightbox links*/
+        $("#jLightroom2").lightroom({
+            image_container_selector: "div", 
+            img_class_loaded: "jlr_loaded",
+            img_space: 5,
+            img_mode: 'max'
+        }).init();
+    </script>
+  </body>
+</html>
